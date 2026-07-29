@@ -354,6 +354,38 @@
   overflow: hidden; 
 }
 
+.model-card-header {
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.015);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.model-card-header-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.model-card-badge {
+  padding: 4px 12px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .model-card-inner { 
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -369,6 +401,7 @@
   justify-content: center; 
   padding: 24px; 
   overflow: hidden; 
+  border-right: 1px solid var(--glass-border); /* dividing line on desktop */
 }
 
 .model-card-image-side img { 
@@ -479,28 +512,14 @@
   color: var(--text-primary); 
   z-index: 5; 
 }
-
-.model-card-title { 
-  padding: 16px 24px; 
-  background: var(--surface); 
-  border-top: 1px solid var(--glass-border); 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-}
-
-.model-card-title h3 { 
-  font-family: var(--font-display); 
-  font-size: 1.1rem; 
-  font-weight: 600; 
-}
-
 @media (max-width: 900px) {
   .model-card-inner { 
     grid-template-columns: 1fr; 
   }
   .model-card-image-side {
     min-height: 280px;
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
   }
   .model-card-video-link-wrapper {
     min-height: 250px;
@@ -513,28 +532,10 @@
   .model-card-image-side { 
     min-height: 220px; 
     padding: 16px; 
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
   }
   .model-card-video-link-wrapper { min-height: 200px; }
-  .model-card-label { 
-    font-size: 0.7rem; 
-    padding: 4px 10px; 
-    top: 10px; 
-    left: 10px; 
-  }
-  .model-card-type-label { 
-    font-size: 0.65rem; 
-    bottom: 10px; 
-    left: 10px; 
-  }
-  .model-card-title { 
-    padding: 12px 16px; 
-    flex-direction: column; 
-    gap: 10px; 
-    align-items: flex-start; 
-  }
-  .model-card-title h3 { 
-    font-size: 0.95rem; 
-  }
   .notice-section { padding: 50px 0; }
   .notice-card { padding: 24px 20px; }
   .notice-title { font-size: 1.2rem; }
