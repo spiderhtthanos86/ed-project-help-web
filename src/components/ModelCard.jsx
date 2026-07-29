@@ -14,19 +14,27 @@ export default function ModelCard({ model, index }) {
           <img src={model.imageUrl} alt={`${model.figureLabel} - Book Diagram`} loading="lazy" />
         </div>
         
-        {/* Right side: YouTube Video */}
+        {/* Right side: YouTube Video (Clean Thumbnail + Link) */}
         <div className="model-card-video-side">
           <span className="model-card-label">{model.figureLabel}</span>
           <span className="model-card-type-label">🎥 Soap Model Video</span>
-          <div className="model-card-video-wrapper">
-            <iframe
-              src={getYoutubeEmbedUrl(model.youtubeUrl)}
-              title={`${model.figureLabel} - Soap Model Video`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <a 
+            href={model.youtubeUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="model-card-video-link-wrapper"
+          >
+            <img 
+              src={getYoutubeThumbnailUrl(model.youtubeUrl)} 
+              alt={`${model.figureLabel} - Soap Model Video Thumbnail`} 
+              loading="lazy"
+            />
+            <div className="model-card-video-overlay">
+              <div className="youtube-play-btn">
+                <span>▶</span> Watch Video on YouTube
+              </div>
+            </div>
+          </a>
         </div>
       </div>
       

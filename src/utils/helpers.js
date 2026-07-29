@@ -16,7 +16,7 @@ export const getYoutubeEmbedUrl = (url) => {
 export const getYoutubeThumbnailUrl = (url) => {
   const videoId = extractYoutubeVideoId(url);
   if (!videoId) return null;
-  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 };
 
 // If a user pastes a standard imgbb page link (like https://ibb.co/xxxxxx),
