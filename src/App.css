@@ -348,15 +348,34 @@
   gap: 2rem; 
 }
 
-/* Model Card */
+/* Model Card General Base */
 .model-card { 
   padding: 0; 
-  overflow: hidden; 
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+/* 1. Alternate backgrounds & glow colors for different model sections */
+.model-card:nth-child(odd) {
+  background: rgba(124, 58, 237, 0.02); /* Subtle purple tint */
+}
+.model-card:nth-child(odd):hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.08);
+}
+
+.model-card:nth-child(even) {
+  background: rgba(6, 182, 212, 0.02); /* Subtle cyan tint */
+  border-color: rgba(6, 182, 212, 0.1);
+}
+.model-card:nth-child(even):hover {
+  border-color: rgba(6, 182, 212, 0.25);
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.08);
 }
 
 .model-card-header {
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.01);
   border-bottom: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
@@ -377,13 +396,20 @@
 
 .model-card-badge {
   padding: 4px 12px;
-  background: var(--gradient-primary);
   border-radius: var(--radius-sm);
   font-size: 0.8rem;
   color: white;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* 2. Alternate Badge Gradients */
+.model-card:nth-child(odd) .model-card-badge {
+  background: var(--gradient-primary); /* Purple gradient */
+}
+.model-card:nth-child(even) .model-card-badge {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); /* Cyan/Blue gradient */
 }
 
 .model-card-inner { 
