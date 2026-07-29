@@ -5,7 +5,7 @@ export const sanitizeInput = (input) => {
 
 export const validateYoutubeUrl = (url) => {
   if (!url) return { isValid: false, videoId: null };
-  const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
   const match = url.match(regExp);
   if (match && match[2].length === 11) {
     return { isValid: true, videoId: match[2] };

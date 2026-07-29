@@ -27,6 +27,11 @@ const AdminModelForm = ({ onModelAdded }) => {
         throw new Error('Please enter the book diagram image URL.');
       }
 
+      // Check if it is a standard ibb.co page link rather than a direct image link
+      if (imageUrl.includes('ibb.co') && !imageUrl.includes('i.ibb.co')) {
+        throw new Error('This looks like an imgbb PAGE link, not a direct IMAGE link. Please upload on imgbb, click "Get share links", copy the "Direct link" (which starts with i.ibb.co and ends in .jpg/.png), and paste that instead!');
+      }
+
       // Basic URL validation for image
       try {
         new URL(imageUrl.trim());
