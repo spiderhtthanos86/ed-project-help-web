@@ -32,7 +32,7 @@ export default function ModelCard({ model, index }) {
       
       {/* Bottom bar with title and help button */}
       <div className="model-card-title">
-        <h3>{model.title || model.figureLabel}</h3>
+        <h3>Soap Model for {model.figureLabel}</h3>
         <button
           className="model-card-help-btn"
           onClick={() => setShowContact(!showContact)}

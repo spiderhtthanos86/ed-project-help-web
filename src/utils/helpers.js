@@ -9,7 +9,8 @@ export const extractYoutubeVideoId = (url) => {
 export const getYoutubeEmbedUrl = (url) => {
   const videoId = extractYoutubeVideoId(url);
   if (!videoId) return null;
-  return `https://www.youtube.com/embed/${videoId}`;
+  // modestbranding=1: hides logo, rel=0: hides other channel's recommendations, iv_load_policy=3: hides annotations
+  return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`;
 };
 
 export const getYoutubeThumbnailUrl = (url) => {
