@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getYoutubeEmbedUrl } from '../utils/helpers';
+import { getYoutubeThumbnailUrl } from '../utils/helpers';
 
 export default function ModelCard({ model, index }) {
   const [showContact, setShowContact] = useState(false);
